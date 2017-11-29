@@ -1,0 +1,26 @@
+{
+  "name": "bytes-util",
+  "description": "Bytes convert utils.",
+  "version": "1.0.0",
+  "main": "dist/bytes-util.cjs.js",
+  "module": "dist/bytes-util.esm.js",
+  "jsnext:main": "dist/bytes-util.esm.js",
+  "dependencies": {},
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "eslint": "^3.7.1",
+    "rollup": "^0.50.0",
+    "rollup-plugin-buble": "^0.18.0",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-node-resolve": "^3.0.0"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "ava --verbose",
+    "lint": "eslint src test"
+  },
+  "files":[
+    "dist"
+  ]
+}
