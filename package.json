@@ -1,7 +1,7 @@
 {
   "name": "bytes-util",
   "description": "Bytes convert utils.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "dist/bytes-util.cjs.js",
   "module": "dist/bytes-util.esm.js",
   "jsnext:main": "dist/bytes-util.esm.js",
@@ -25,7 +25,7 @@
     "lint": "eslint src test",
     "release": "npm run build && npm run minify && npm run bump && git push --follow-tags origin master && npm publish"
   },
-  "files":[
+  "files": [
     "dist"
   ]
 }
