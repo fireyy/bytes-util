@@ -5,6 +5,16 @@
   "main": "dist/bytes-util.cjs.js",
   "module": "dist/bytes-util.esm.js",
   "jsnext:main": "dist/bytes-util.esm.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fireyy/bytes-util.git"
+  },
+  "keywords": [
+    "bytes",
+    "util",
+    "readable"
+  ],
+  "author": "fireyy <fireyy@gmail.com>",
   "dependencies": {},
   "devDependencies": {
     "ava": "^0.16.0",
