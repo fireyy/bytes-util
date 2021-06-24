@@ -2,9 +2,12 @@
   "name": "bytes-util",
   "description": "Bytes convert utils.",
   "version": "1.1.1",
-  "main": "dist/bytes-util.cjs.js",
-  "module": "dist/bytes-util.esm.js",
-  "jsnext:main": "dist/bytes-util.esm.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "exports": {
+    "require": "./dist/index.js",
+    "import": "./dist/index.mjs"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fireyy/bytes-util.git"
@@ -17,23 +20,17 @@
   "author": "fireyy <fireyy@gmail.com>",
   "dependencies": {},
   "devDependencies": {
-    "ava": "^0.16.0",
-    "eslint": "^3.7.1",
-    "rollup": "^0.50.0",
-    "rollup-plugin-buble": "^0.18.0",
-    "rollup-plugin-commonjs": "^8.2.6",
-    "rollup-plugin-node-resolve": "^3.0.0",
-    "standard-version": "^4.2.0",
-    "uglify-js": "^3.1.5"
+    "@sucrase/jest-plugin": "^2.0.0",
+    "@types/jest": "^26.0.20",
+    "ava": "^3.15.0",
+    "jest": "^26.6.3",
+    "tsup": "^4.8.4",
+    "typescript": "^4.3.4"
   },
   "scripts": {
-    "bump": "standard-version",
-    "minify": "uglifyjs $npm_package_main -cm -o $npm_package_main --source-map base=${npm_package_main}.map",
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "test": "ava --verbose",
-    "lint": "eslint src test",
-    "release": "npm run build && npm run minify && npm run bump && git push --follow-tags origin master && npm publish"
+    "build": "tsup src/index.ts --format cjs,esm --dts-resolve",
+    "test": "jest",
+    "prepublishOnly": "npm run build"
   },
   "files": [
     "dist"
