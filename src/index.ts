@@ -13,7 +13,7 @@ const unit = 1024
  *  @example
  *  parse('20MB')
  */
-function parse (size: string): number | string {
+ export function parse (size: string): number | string {
   if (typeof size !== 'string') {
     throw new TypeError(`Expected a string, got ${typeof size}: ${size}`)
   }
@@ -37,7 +37,7 @@ function parse (size: string): number | string {
  *  @example
  *  stringify(1538)
  */
-function stringify (bytes: number) : string {
+ export function stringify (bytes: number) : string {
   if (!Number.isFinite(bytes)) {
     throw new TypeError(`Expected a finite number, got ${typeof bytes}: ${bytes}`)
   }
